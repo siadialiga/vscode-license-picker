@@ -1,6 +1,6 @@
 {
-  "name": "license-picker",
-  "displayName": "License Picker",
+  "name": "visual-license-picker",
+  "displayName": "Visual License Picker",
   "description": "A simple visual license picker for VS Code. Browse popular open-source licenses, compare their permissions and limitations, and add one to your project in seconds.",
   "version": "0.1.0",
   "publisher": "siadialiga",
@@ -14,17 +14,17 @@
     "commands": [
       {
         "command": "licensePicker.createLicense",
-        "title": "License Picker: Create LICENSE File"
+        "title": "Visual License Picker: Create LICENSE File"
       },
       {
         "command": "licensePicker.openVisual",
-        "title": "License Picker: Open LICENSE Visually"
+        "title": "Visual License Picker: Open LICENSE Visually"
       }
     ],
     "customEditors": [
       {
         "viewType": "licensePicker.editor",
-        "displayName": "License Picker",
+        "displayName": "Visual License Picker",
         "selector": [
           { "filenamePattern": "LICENSE" },
           { "filenamePattern": "LICENSE.*" },
