@@ -1,0 +1,55 @@
+{
+  "name": "license-picker",
+  "displayName": "License Picker",
+  "description": "A simple visual license picker for VS Code. Browse popular open-source licenses, compare their permissions and limitations, and add one to your project in seconds.",
+  "version": "0.1.0",
+  "publisher": "siadialiga",
+  "engines": { "vscode": "^1.90.0" },
+  "categories": ["Other"],
+  "keywords": ["license", "github", "spdx", "custom editor"],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "icon": "media/images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "licensePicker.createLicense",
+        "title": "License Picker: Create LICENSE File"
+      },
+      {
+        "command": "licensePicker.openVisual",
+        "title": "License Picker: Open LICENSE Visually"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "licensePicker.editor",
+        "displayName": "License Picker",
+        "selector": [
+          { "filenamePattern": "LICENSE" },
+          { "filenamePattern": "LICENSE.*" },
+          { "filenamePattern": "LICENCE" },
+          { "filenamePattern": "LICENCE.*" }
+        ],
+        "priority": "default"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "licensePicker.openVisual",
+          "when": "resourceFilename =~ /^(LICENSE|LICENCE)(\\..*)?$/i",
+          "group": "navigation@9"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "package": "npx @vscode/vsce package"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siadialiga/vscode-license-picker"
+  }
+}
